@@ -7,10 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="lstNumeros" HorizontalAlignment="Left" Height="400" Margin="10,10,0,0" VerticalAlignment="Top" Width="123">
-        </ListBox>
-        <Button x:Name="btnOrdenar" Content="Ordenar Shell" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="147,10,0,0" Click="btnOrdenar_Click"/>
-        <Button x:Name="btnOrdenar_Bubble" Content="Ordenar Bubble" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="147,49,0,0" Click="btnOrdenar_Bubble_Click"/>
+        <ListView x:Name="lstNumeros" HorizontalAlignment="Left" Height="400" Margin="10,10,0,0" VerticalAlignment="Top" Width="365">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Nombre}" Header="Nombre" Width="120"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Promedio}" Header="Promedio" Width="120"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Faltas}" Header="Faltas" Width="120"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btnOrdenar" Content="Ordenar Shell por Promedio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="195" Margin="479,10,0,0" Click="btnOrdenar_Click" Height="26"/>
+        <Button x:Name="btnOrdenar_Bubble" Content="Ordenar Bubble por Promedio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="195" Margin="479,54,0,0" Click="btnOrdenar_Bubble_Click" Height="26"/>
+        <Button x:Name="btnshellfaltas" Content="Ordenar Shell por Faltas" HorizontalAlignment="Left" Margin="479,97,0,0" VerticalAlignment="Top" Width="195" Height="27" Click="Button_Click_1"/>
+        <Button x:Name="btnbubblefaltas" Content="Ordenar Bubble por Faltas" HorizontalAlignment="Left" Margin="479,142,0,0" VerticalAlignment="Top" Width="195" Click="Button_Click" Height="28"/>
 
     </Grid>
 </Window>

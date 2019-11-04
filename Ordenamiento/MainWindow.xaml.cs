@@ -79,11 +79,54 @@ namespace Ordenamiento
                 intercambio = false;
                 for (int i = 0; i < alumnos.Count - 1; i++)
                 {
-                    if (miLista[i] > miLista[i + 1])
+                    if (alumnos[i].Promedio > alumnos[i + 1].Promedio)
                     {
-                        int temp = miLista[i];
-                        miLista[i] = miLista[i + 1];
-                        miLista[i + 1] = temp;
+                        var temp = alumnos[i];
+                        alumnos[i] = alumnos[i + 1];
+                        alumnos[i + 1] = temp;
+                        intercambio = true;
+                    }
+                }
+            } while (intercambio);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            int gap, i;
+            gap = alumnos.Count / 2;
+
+            while (gap > 0)
+            {
+                for (i = 0; i < alumnos.Count; i++)
+                {
+                    if (gap + i < alumnos.Count && alumnos[i].Faltas > alumnos[gap + i].Faltas)
+                    {
+                        var temp = alumnos[i];
+                        alumnos[i] = alumnos[gap + i];
+                        alumnos[gap + i] = temp;
+
+                    }
+                }
+
+                gap--;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            bool intercambio = false;
+
+            do
+            {
+                intercambio = false;
+                for (int i = 0; i < alumnos.Count - 1; i++)
+                {
+                    if (alumnos[i].Faltas > alumnos[i + 1].Faltas)
+                    {
+                        var temp = alumnos[i];
+                        alumnos[i] = alumnos[i + 1];
+                        alumnos[i + 1] = temp;
                         intercambio = true;
                     }
                 }
