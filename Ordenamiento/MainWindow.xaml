@@ -1,0 +1,16 @@
+﻿<Window x:Class="Ordenamiento.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ordenamiento"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="lstNumeros" HorizontalAlignment="Left" Height="400" Margin="10,10,0,0" VerticalAlignment="Top" Width="123">
+        </ListBox>
+        <Button x:Name="btnOrdenar" Content="Ordenar Shell" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="147,10,0,0" Click="btnOrdenar_Click"/>
+        <Button x:Name="btnOrdenar_Bubble" Content="Ordenar Bubble" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="147,49,0,0" Click="btnOrdenar_Bubble_Click"/>
+
+    </Grid>
+</Window>
